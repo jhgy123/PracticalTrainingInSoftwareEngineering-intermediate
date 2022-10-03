@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: "elmServer"
+
+#business:
+#  security:
+#    userName: "admin"
+#    password: "123456"
