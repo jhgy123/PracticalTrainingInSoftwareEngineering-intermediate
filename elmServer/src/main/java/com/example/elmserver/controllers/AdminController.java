@@ -1,5 +1,6 @@
 package com.example.elmserver.controllers;
 
+import com.example.elmserver.configuration.properies.MySecurityProperites;
 import com.example.elmserver.dao.impl.AdminDao;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +33,15 @@ public class AdminController {
 //        System.out.println(admindao.getAll());
 
         return admindao.getAll().toString();
+    }
+
+    @Resource
+    MySecurityProperites secPps;
+    @GetMapping("/test")
+    public String getProps(){
+        var userName=secPps.getDburl();
+        System.out.println(userName);
+        return userName;
     }
 
 }

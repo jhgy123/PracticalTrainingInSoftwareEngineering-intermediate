@@ -1,11 +1,9 @@
 package com.example.elmserver.dao.impl;
 
-import com.example.elmserver.dao.DBHelper;
+import com.example.elmserver.utils.DBHelper;
 import com.example.elmserver.dao.IBusinessDao;
 import com.example.elmserver.entities.Business;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import java.sql.SQLException;
 import java.util.ArrayList;

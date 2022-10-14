@@ -1,8 +1,7 @@
 package com.example.elmserver.dao.impl;
 
-import com.example.elmserver.dao.DBHelper;
+import com.example.elmserver.utils.DBHelper;
 import com.example.elmserver.dao.IFoodDao;
-import com.example.elmserver.entities.Business;
 import com.example.elmserver.entities.Food;
 import org.springframework.stereotype.Component;
 
@@ -16,7 +15,6 @@ public class FoodDao implements IFoodDao{
 
     @Resource
     DBHelper dbhelper;
-
 
 
     @Override

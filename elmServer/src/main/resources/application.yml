@@ -9,3 +9,7 @@ spring:
 #  security:
 #    userName: "admin"
 #    password: "123456"
+
+sqlserver:
+  jdbc:
+    dburl: "jdbc:sqlserver://127.0.0.1:11069;DatabaseName=Software_Practical_Training;TrustServerCertificate=true;user=sa;password=180714;"

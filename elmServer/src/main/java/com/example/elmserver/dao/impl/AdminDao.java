@@ -1,6 +1,6 @@
 package com.example.elmserver.dao.impl;
 
-import com.example.elmserver.dao.DBHelper;
+import com.example.elmserver.utils.DBHelper;
 import com.example.elmserver.dao.IAdminDao;
 import com.example.elmserver.entities.Admin;
 import org.springframework.stereotype.Component;
@@ -15,6 +15,7 @@ public class AdminDao implements IAdminDao {
 
     @Resource
     DBHelper dbhelper;
+
 
     @Override
     public boolean save(Admin s) throws SQLException {
