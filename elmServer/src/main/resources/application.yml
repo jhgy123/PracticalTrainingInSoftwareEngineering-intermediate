@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: "elmServer"
+  datasource:
+    url: "jdbc:sqlserver://127.0.0.1:11069;DatabaseName=Software_Practical_Training;TrustServerCertificate=true"
+    username: "sa"
+    password: "180714"
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
 #business:
 #  security:

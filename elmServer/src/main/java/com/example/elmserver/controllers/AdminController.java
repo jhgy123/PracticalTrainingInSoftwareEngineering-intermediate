@@ -1,7 +1,8 @@
 package com.example.elmserver.controllers;
 
 import com.example.elmserver.configuration.properies.MySecurityProperites;
-import com.example.elmserver.dao.impl.AdminDao;
+import com.example.elmserver.dao.jpa.AdminJPADao;
+import com.example.elmserver.entities.Admin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +17,7 @@ import java.sql.SQLException;
 public class AdminController {
 
     @Resource
-    AdminDao admindao;
+    com.example.elmserver.dao.impl.AdminDao admindao;
 
     @GetMapping("/getone")
     //接收get请求中的id参数值
@@ -43,5 +44,16 @@ public class AdminController {
         System.out.println(userName);
         return userName;
     }
+
+    @Resource
+    AdminJPADao usDao;//jpa的dao
+    @GetMapping("/login")
+    public Admin login() {
+        Admin admin=null;
+        admin= usDao.findAdminByIdAndPassword(1,"0000");
+        return admin;
+    }
+
+
 
 }
