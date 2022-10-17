@@ -9,6 +9,16 @@ spring:
     username: "sa"
     password: "180714"
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#  jpa:
+#    数据库表修改，自动生成、如已经有数据库表，尽量关闭
+#    generate-ddl: true
+#    hibernate:
+#      ddl-auto: update
+#      naming:
+##      jpa命名策略
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
 
 #business:
 #  security:
