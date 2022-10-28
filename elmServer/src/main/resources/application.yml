@@ -17,7 +17,18 @@ spring:
 #      naming:
 ##      jpa命名策略
 #        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+#logging:
+#  level:
 
+#配置日志
+logging:
+  level:
+    com.example: debug
+    root: info
+  config: classpath:logging-config.xml
+  file:
+    name: ${logging.file.path}/${spring.application.name}.log
+    path: logs
 
 
 #business:

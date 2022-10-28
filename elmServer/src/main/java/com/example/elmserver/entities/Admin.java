@@ -1,5 +1,6 @@
 package com.example.elmserver.entities;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,6 +28,7 @@ public class Admin {
     @Id//设置主键
     @GeneratedValue(strategy= GenerationType.IDENTITY)//该字段自增
     @Column(nullable = false)//重命名字段名字,非空
+    @Schema(description = "主键")
     private int id;
     @Column(length = 20,nullable = false,unique = true)//重命名字段名字、设置字段的最大长度为20,非空,唯一索引
     private String name;

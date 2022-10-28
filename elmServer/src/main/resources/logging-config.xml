@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <property name="LOG_PATH" value="${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}"/>
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}spring.log}"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+    <springProperty scope="context" name="SPRING_APPLICATION_NAME" source="spring.application.name"/>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <File>${LOG_PATH}/${SPRING_APPLICATION_NAME}.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOGBACK_ROLLINGPOLICY_FILE_NAME_PATTERN:-${LOG_PATH}/%d{yyyyMM,aux}/%d{dd,aux}/${SPRING_APPLICATION_NAME}.%d{yyyy-MM-dd}}.%i.gz
+            </fileNamePattern>
+            <maxFileSize>${LOGBACK_ROLLINGPOLICY_MAX_FILE_SIZE:-100MB}</maxFileSize>
+            <maxHistory>${LOGBACK_ROLLINGPOLICY_MAX_HISTORY:-365}</maxHistory>
+            <cleanHistoryOnStart>${LOGBACK_ROLLINGPOLICY_CLEAN_HISTORY_ON_START:-true}</cleanHistoryOnStart>
+            <totalSizeCap>${LOGBACK_ROLLINGPOLICY_TOTAL_SIZE_CAP:-40GB}</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>Error</level>
+        </filter>
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <File>${LOG_PATH}/${SPRING_APPLICATION_NAME}-error.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOGBACK_ROLLINGPOLICY_FILE_NAME_PATTERN:-${LOG_PATH}/%d{yyyyMM,aux}/%d{dd,aux}/${SPRING_APPLICATION_NAME}.%d{yyyy-MM-dd}}-error.%i.gz
+            </fileNamePattern>
+            <maxFileSize>${LOGBACK_ROLLINGPOLICY_MAX_FILE_SIZE:-100MB}</maxFileSize>
+            <maxHistory>${LOGBACK_ROLLINGPOLICY_MAX_HISTORY:-365}</maxHistory>
+            <cleanHistoryOnStart>${LOGBACK_ROLLINGPOLICY_CLEAN_HISTORY_ON_START:-true}</cleanHistoryOnStart>
+            <totalSizeCap>${LOGBACK_ROLLINGPOLICY_TOTAL_SIZE_CAP:-40GB}</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <appender name="AUDIT_LOGIN_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <File>${LOG_PATH}/${SPRING_APPLICATION_NAME}-audit-login.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOGBACK_ROLLINGPOLICY_FILE_NAME_PATTERN:-${LOG_PATH}/%d{yyyyMM,aux}/%d{dd,aux}/${SPRING_APPLICATION_NAME}-audit-login.%d{yyyy-MM-dd}}.%i.gz
+            </fileNamePattern>
+            <maxFileSize>${LOGBACK_ROLLINGPOLICY_MAX_FILE_SIZE:-100MB}</maxFileSize>
+            <maxHistory>${LOGBACK_ROLLINGPOLICY_MAX_HISTORY:-365}</maxHistory>
+            <cleanHistoryOnStart>${LOGBACK_ROLLINGPOLICY_CLEAN_HISTORY_ON_START:-true}</cleanHistoryOnStart>
+            <totalSizeCap>${LOGBACK_ROLLINGPOLICY_TOTAL_SIZE_CAP:-40GB}</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <appender name="AUDIT_OPERATION_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <File>${LOG_PATH}/${SPRING_APPLICATION_NAME}-audit-operation.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOGBACK_ROLLINGPOLICY_FILE_NAME_PATTERN:-${LOG_PATH}/%d{yyyyMM,aux}/%d{dd,aux}/${SPRING_APPLICATION_NAME}-audit-operation.%d{yyyy-MM-dd}}.%i.gz
+            </fileNamePattern>
+            <maxFileSize>${LOGBACK_ROLLINGPOLICY_MAX_FILE_SIZE:-100MB}</maxFileSize>
+            <maxHistory>${LOGBACK_ROLLINGPOLICY_MAX_HISTORY:-365}</maxHistory>
+            <cleanHistoryOnStart>${LOGBACK_ROLLINGPOLICY_CLEAN_HISTORY_ON_START:-true}</cleanHistoryOnStart>
+            <totalSizeCap>${LOGBACK_ROLLINGPOLICY_TOTAL_SIZE_CAP:-40GB}</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <appender name="AUDIT_SQL_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <File>${LOG_PATH}/${SPRING_APPLICATION_NAME}-audit-sql.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOGBACK_ROLLINGPOLICY_FILE_NAME_PATTERN:-${LOG_PATH}/%d{yyyyMM,aux}/%d{dd,aux}/${SPRING_APPLICATION_NAME}-audit-sql.%d{yyyy-MM-dd}}.%i.gz
+            </fileNamePattern>
+            <maxFileSize>${LOGBACK_ROLLINGPOLICY_MAX_FILE_SIZE:-100MB}</maxFileSize>
+            <maxHistory>${LOGBACK_ROLLINGPOLICY_MAX_HISTORY:-365}</maxHistory>
+            <cleanHistoryOnStart>${LOGBACK_ROLLINGPOLICY_CLEAN_HISTORY_ON_START:-true}</cleanHistoryOnStart>
+            <totalSizeCap>${LOGBACK_ROLLINGPOLICY_TOTAL_SIZE_CAP:-40GB}</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <appender name="PAY_WECHAT" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <File>${LOG_PATH}/${SPRING_APPLICATION_NAME}-pay-wechat.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOGBACK_ROLLINGPOLICY_FILE_NAME_PATTERN:-${LOG_PATH}/%d{yyyyMM,aux}/%d{dd,aux}/${SPRING_APPLICATION_NAME}-pay-wechat.%d{yyyy-MM-dd}}.%i.gz
+            </fileNamePattern>
+            <maxFileSize>${LOGBACK_ROLLINGPOLICY_MAX_FILE_SIZE:-100MB}</maxFileSize>
+            <maxHistory>${LOGBACK_ROLLINGPOLICY_MAX_HISTORY:-365}</maxHistory>
+            <cleanHistoryOnStart>${LOGBACK_ROLLINGPOLICY_CLEAN_HISTORY_ON_START:-true}</cleanHistoryOnStart>
+            <totalSizeCap>${LOGBACK_ROLLINGPOLICY_TOTAL_SIZE_CAP:-40GB}</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <appender name="PAY_ALIPAY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <File>${LOG_PATH}/${SPRING_APPLICATION_NAME}-pay-alipay.log</File>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                ${LOGBACK_ROLLINGPOLICY_FILE_NAME_PATTERN:-${LOG_PATH}/%d{yyyyMM,aux}/%d{dd,aux}/${SPRING_APPLICATION_NAME}-pay-alipay.%d{yyyy-MM-dd}}.%i.gz
+            </fileNamePattern>
+            <maxFileSize>${LOGBACK_ROLLINGPOLICY_MAX_FILE_SIZE:-100MB}</maxFileSize>
+            <maxHistory>${LOGBACK_ROLLINGPOLICY_MAX_HISTORY:-365}</maxHistory>
+            <cleanHistoryOnStart>${LOGBACK_ROLLINGPOLICY_CLEAN_HISTORY_ON_START:-true}</cleanHistoryOnStart>
+            <totalSizeCap>${LOGBACK_ROLLINGPOLICY_TOTAL_SIZE_CAP:-40GB}</totalSizeCap>
+        </rollingPolicy>
+    </appender>
+    <logger name="io.naccoll.boilerplate.audit.interfaces.task.AuditOperateEventSLf4jHandler" additivity="false">
+        <appender-ref ref="AUDIT_OPERATION_FILE"/>
+    </logger>
+    <logger name="io.naccoll.boilerplate.audit.interfaces.task.AuditLoginEventSlf4jHandler" additivity="false">
+        <appender-ref ref="AUDIT_LOGIN_FILE" />
+    </logger>
+    <logger name="p6spy" additivity="false">
+        <appender-ref ref="AUDIT_SQL_FILE"/>
+    </logger>
+    <logger name="com.github.binarywang.wxpay" additivity="true">
+        <appender-ref ref="PAY_WECHAT"/>
+    </logger>
+    <logger name="com.egzosn.pay.common.http" additivity="true">
+        <appender-ref ref="PAY_ALIPAY"/>
+    </logger>
+    <root>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="ERROR_FILE"/>
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

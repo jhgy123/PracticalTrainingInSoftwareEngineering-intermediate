@@ -60,6 +60,7 @@ public class FoodTest {
         FoodDao dao=new FoodDao();
         List<Food> resultset=dao.queryFoodByBussinessId(13);
         System.out.println(resultset.get(1));
+        
     }
 
 }
