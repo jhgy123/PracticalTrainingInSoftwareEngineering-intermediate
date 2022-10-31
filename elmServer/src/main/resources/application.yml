@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: "elmServer"
+  mvc:
+    pathmatch:
+      # 配置策略
+      matching-strategy: ant-path-matcher
   datasource:
     url: "jdbc:sqlserver://127.0.0.1:11069;DatabaseName=Software_Practical_Training;TrustServerCertificate=true"
     username: "sa"

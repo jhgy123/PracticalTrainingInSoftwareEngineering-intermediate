@@ -1,7 +1,7 @@
-package com.example.elmserver.dao.impl;
+package com.example.elmserver.dao.olddao.impl;
 
 import com.example.elmserver.utils.DBHelper;
-import com.example.elmserver.dao.IAdminDao;
+import com.example.elmserver.dao.olddao.IAdminDao;
 import com.example.elmserver.entities.Admin;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class AdminDao implements IAdminDao {
+public class OldAdminDao implements IAdminDao {
 
     @Resource
     DBHelper dbhelper;

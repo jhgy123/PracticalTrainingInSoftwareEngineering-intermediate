@@ -1,7 +1,8 @@
-package com.example.elmserver.controllers;
+package com.example.elmserver.controllers.oldcontrollers;
 
 import com.example.elmserver.configuration.properies.MySecurityProperites;
-import com.example.elmserver.dao.jpa.AdminJPADao;
+import com.example.elmserver.dao.olddao.impl.OldAdminDao;
+import com.example.elmserver.dao.olddao.jpatest.AdminJPADao;
 import com.example.elmserver.entities.Admin;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -12,13 +13,13 @@ import javax.annotation.Resource;
 import java.sql.SQLException;
 
 @Slf4j
-@Tag(name="用户控制器 v1")
+@Tag(name="管理员控制器 old")
 @RestController
-@RequestMapping(value = "admin")
-public class AdminController {
+@RequestMapping(value = "oldadmin")
+public class OldAdminController {
 
     @Resource
-    com.example.elmserver.dao.impl.AdminDao admindao;
+    OldAdminDao admindao;
 
     @GetMapping("/getone")
     //接收get请求中的id参数值

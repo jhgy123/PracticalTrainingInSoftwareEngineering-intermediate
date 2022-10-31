@@ -1,6 +1,5 @@
-import com.example.elmserver.dao.impl.BusinessDao;
-import com.example.elmserver.dao.impl.FoodDao;
-import com.example.elmserver.entities.Business;
+import com.example.elmserver.dao.olddao.impl.OldBusinessDao;
+import com.example.elmserver.dao.olddao.impl.OldFoodDao;
 import com.example.elmserver.entities.Food;
 import org.junit.jupiter.api.Test;
 
@@ -10,8 +9,8 @@ import java.util.List;
 public class FoodTest {
     @Test
     public void FoodSaveTest() throws SQLException {
-        FoodDao dao=new FoodDao();
-        BusinessDao ad=new BusinessDao();
+        OldFoodDao dao=new OldFoodDao();
+        OldBusinessDao ad=new OldBusinessDao();
         Food admin=  Food.builder()
                 .foodName("wwww")
                 .business(ad.getOne(12))
@@ -22,8 +21,8 @@ public class FoodTest {
 
     @Test
     public void FoodUpdateTest() throws SQLException {
-        FoodDao dao=new FoodDao();
-        BusinessDao ad=new BusinessDao();
+        OldFoodDao dao=new OldFoodDao();
+        OldBusinessDao ad=new OldBusinessDao();
         Food admin=  Food.builder()
                 .foodName("wwww")
                 .foodId(1009)
@@ -36,28 +35,28 @@ public class FoodTest {
 
     @Test
     public void FoodDeleteTest() throws SQLException {
-        FoodDao dao=new FoodDao();
+        OldFoodDao dao=new OldFoodDao();
         boolean resultset=dao.delete(1009);
         System.out.println(resultset);
     }
 
     @Test
     public void FoodGetOneTest() throws SQLException {
-        FoodDao ad=new FoodDao();
+        OldFoodDao ad=new OldFoodDao();
         var food=ad.getOne(1010);
         System.out.println(food.getBusiness());
     }
 
     @Test
     public void FoodGetAllTest() throws SQLException {
-        FoodDao dao=new FoodDao();
+        OldFoodDao dao=new OldFoodDao();
         List<Food> resultset=dao.getAll();
         System.out.println(resultset.get(1));
     }
 
     @Test
     public void FoodQueryFoodByBussinessIdTest() throws SQLException {
-        FoodDao dao=new FoodDao();
+        OldFoodDao dao=new OldFoodDao();
         List<Food> resultset=dao.queryFoodByBussinessId(13);
         System.out.println(resultset.get(1));
         

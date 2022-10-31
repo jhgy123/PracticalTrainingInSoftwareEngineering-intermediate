@@ -1,6 +1,4 @@
-import com.example.elmserver.dao.impl.AdminDao;
-import com.example.elmserver.dao.impl.BusinessDao;
-import com.example.elmserver.entities.Admin;
+import com.example.elmserver.dao.olddao.impl.OldBusinessDao;
 import com.example.elmserver.entities.Business;
 import org.junit.jupiter.api.Test;
 
@@ -10,21 +8,21 @@ import java.util.List;
 public class BusinessTest {
     @Test
         public void BusinessQueryTest() throws SQLException {
-        BusinessDao dao=new BusinessDao();
+        OldBusinessDao dao=new OldBusinessDao();
         List<Business> resultset=dao.query("","沈阳","");
         System.out.println(resultset.get(1));
     }
 
     @Test
     public void BusinessGetAllTest() throws SQLException {
-        BusinessDao dao=new BusinessDao();
+        OldBusinessDao dao=new OldBusinessDao();
         List<Business> resultset=dao.getAll();
         System.out.println(resultset.get(1));
     }
 
     @Test
     public void BusinessSaveTest() throws SQLException {
-        BusinessDao ad=new BusinessDao();
+        OldBusinessDao ad=new OldBusinessDao();
         Business admin= Business.builder()
                 .name("TOM")
                 .password("tom")
@@ -37,7 +35,7 @@ public class BusinessTest {
 
     @Test
     public void BusinessUpdateTest() throws SQLException {
-        BusinessDao ad=new BusinessDao();
+        OldBusinessDao ad=new OldBusinessDao();
         Business admin= Business.builder()
                 .name("jack")
                 .password("tom")
@@ -52,14 +50,14 @@ public class BusinessTest {
 
     @Test
     public void BusinessDeleteTest() throws SQLException {
-        BusinessDao dao=new BusinessDao();
+        OldBusinessDao dao=new OldBusinessDao();
         boolean resultset=dao.delete(27);
         System.out.println(resultset);
     }
 
     @Test
     public void BusinessGetOneTest() throws SQLException {
-        BusinessDao ad=new BusinessDao();
+        OldBusinessDao ad=new OldBusinessDao();
         var business=ad.getOne(12);
 //        System.out.println(business.getName());
     }

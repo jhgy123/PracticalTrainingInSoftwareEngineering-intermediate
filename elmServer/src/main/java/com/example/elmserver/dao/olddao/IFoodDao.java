@@ -1,4 +1,4 @@
-package com.example.elmserver.dao;
+package com.example.elmserver.dao.olddao;
 
 import com.example.elmserver.entities.Business;
 import com.example.elmserver.entities.Food;

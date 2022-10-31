@@ -1,6 +1,6 @@
-package com.example.elmserver.controllers;
+package com.example.elmserver.controllers.oldcontrollers;
 
-import com.example.elmserver.dao.impl.BusinessDao;
+import com.example.elmserver.dao.olddao.impl.OldBusinessDao;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,11 +10,11 @@ import javax.annotation.Resource;
 import java.sql.SQLException;
 
 @RestController
-@RequestMapping(value = "business")
-public class BusinessController {
+@RequestMapping(value = "oldbusiness")
+public class OldBusinessController {
 
     @Resource
-    BusinessDao businessdao;
+    OldBusinessDao businessdao;
 
     @GetMapping("/getone")
     //接收get请求中的id参数值

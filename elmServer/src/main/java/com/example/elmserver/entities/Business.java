@@ -21,7 +21,7 @@ import javax.persistence.*;
 
 @AllArgsConstructor //生成包含所有字段的构造函数
 @NoArgsConstructor //无参构造函数
-public class Business {
+public class Business extends AbstractDomainEntity{
     @Id//设置主键
 
     @GeneratedValue(strategy=GenerationType.IDENTITY)//该字段自增

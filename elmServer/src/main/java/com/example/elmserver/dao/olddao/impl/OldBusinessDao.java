@@ -1,7 +1,7 @@
-package com.example.elmserver.dao.impl;
+package com.example.elmserver.dao.olddao.impl;
 
 import com.example.elmserver.utils.DBHelper;
-import com.example.elmserver.dao.IBusinessDao;
+import com.example.elmserver.dao.olddao.IBusinessDao;
 import com.example.elmserver.entities.Business;
 import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class BusinessDao implements IBusinessDao {
+public class OldBusinessDao implements IBusinessDao {
 
     @Resource
     DBHelper dbhelper;

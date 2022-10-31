@@ -1,4 +1,4 @@
-package com.example.elmserver.controllers;
+package com.example.elmserver.controllers.oldcontrollers;
 
 
 import org.springframework.web.bind.annotation.GetMapping;

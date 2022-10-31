@@ -1,7 +1,7 @@
-package com.example.elmserver.dao.impl;
+package com.example.elmserver.dao.olddao.impl;
 
 import com.example.elmserver.utils.DBHelper;
-import com.example.elmserver.dao.IFoodDao;
+import com.example.elmserver.dao.olddao.IFoodDao;
 import com.example.elmserver.entities.Food;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class FoodDao implements IFoodDao{
+public class OldFoodDao implements IFoodDao{
 
     @Resource
     DBHelper dbhelper;
@@ -47,7 +47,7 @@ public class FoodDao implements IFoodDao{
 
     @Override
     public Food getOne(int i) throws SQLException {
-        BusinessDao businessDao =new BusinessDao();
+        OldBusinessDao businessDao =new OldBusinessDao();
         var sql="select * from Food_Inf where foodId=" + i ;
         var resultset=dbhelper.executeQuery(sql);
         if(resultset.next()) {
@@ -69,7 +69,7 @@ public class FoodDao implements IFoodDao{
 
     @Override
     public List<Food> getAll() throws SQLException {
-        BusinessDao businessDao =new BusinessDao();
+        OldBusinessDao businessDao =new OldBusinessDao();
         List<Food>  result= new ArrayList<Food>();
         String sql = "select * from Food_Inf";
         var resultset=dbhelper.executeQuery(sql);
@@ -90,7 +90,7 @@ public class FoodDao implements IFoodDao{
 
     @Override
     public List<Food> queryFoodByBussinessId(int businessid) throws SQLException {
-        BusinessDao businessDao =new BusinessDao();
+        OldBusinessDao businessDao =new OldBusinessDao();
         List<Food>  result= new ArrayList<Food>();
         String sql = "select * from Food_Inf  where business_id="+businessid;
         var resultset=dbhelper.executeQuery(sql);

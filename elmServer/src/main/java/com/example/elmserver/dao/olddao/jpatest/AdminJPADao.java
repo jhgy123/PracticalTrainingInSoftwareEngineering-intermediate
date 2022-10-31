@@ -1,13 +1,8 @@
-package com.example.elmserver.dao.jpa;
+package com.example.elmserver.dao.olddao.jpatest;
 
 import com.example.elmserver.entities.Admin;
-import com.github.pagehelper.Page;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.lang.Nullable;
-
-import java.awt.print.Pageable;
 
 public interface AdminJPADao extends JpaRepository<Admin,Integer> , JpaSpecificationExecutor<Admin> {
 
