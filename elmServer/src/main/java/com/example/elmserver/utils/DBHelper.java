@@ -1,11 +1,6 @@
 package com.example.elmserver.utils;
 
 import com.example.elmserver.configuration.properies.MySecurityProperites;
-import lombok.Builder;
-import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.stereotype.Component;
 
 

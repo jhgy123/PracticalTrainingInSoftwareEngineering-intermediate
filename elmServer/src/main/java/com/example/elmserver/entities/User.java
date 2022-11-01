@@ -6,44 +6,40 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
 import javax.persistence.*;
+import java.util.Arrays;
 
 @Entity//将Course类映射到数据库中
-@Table(name = "admin_inf")//重命名表名
+@Table(name = "user_inf")//重命名表名
 @Data //生成setter/getter、equals、canEqual、hashCode、toString方法，如为final属性，则不会为该属性生成setter方法。
 @Builder
-//类生成相对略微复杂的构建器API
-//如：Student.builder()
-//        .sno( "001" )
-//        .sname( "admin" )
-//        .sage( 18 )
-//        .sphone( "110" )
-//        .build();
-
 @AllArgsConstructor //生成包含所有字段的构造函数
 @NoArgsConstructor //无参构造函数
-public class Admin extends AbstractDomainEntity{
+public class User extends AbstractDomainEntity{
     @Id//设置主键
-    @GeneratedValue(strategy= GenerationType.IDENTITY)//该字段自增
-    @Column(nullable = false)//重命名字段名字,非空
     @Schema(description = "主键")
+    @Column(nullable = false)//重命名字段名字,非空
     private int id;
-    @Column(length = 20,nullable = false,unique = true)//重命名字段名字、设置字段的最大长度为20,非空,唯一索引
-    private String name;
     @Column(length = 20,nullable = false)//设置字段的最大长度为20,非空
     private String password;
-    @Column(length = 40)//设置字段的最大长度为20,非空
-    private String remarks;
+    @Column(length = 20,nullable = false)//设置字段的最大长度为40,非空
+    private String name;
+    @Column(columnDefinition="bit default 1")//默认值1（男）
+    private Boolean sex;
+//头像，存储的是图片
+    private byte[] img;
+    @Column(columnDefinition="bit default 1")//默认值1（正常）
+    private  Boolean delTag;
 
     @Override
     public String toString() {
-        return "Admin{" +
+        return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
                 ", password='" + password + '\'' +
-                ", remarks='" + remarks + '\'' +
+                ", name='" + name + '\'' +
+                ", sex=" + sex +
+                ", img=" + Arrays.toString(img) +
+                ", delTag=" + delTag +
                 '}';
     }
 }
