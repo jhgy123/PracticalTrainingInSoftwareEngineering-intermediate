@@ -4,6 +4,8 @@ import com.example.elmserver.entities.Admin;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
+import java.util.Collection;
+
 public interface AdminJPADao extends JpaRepository<Admin,Integer> , JpaSpecificationExecutor<Admin> {
 
     Admin findAdminByIdAndPassword(Integer id,String password);//jpa的方法
