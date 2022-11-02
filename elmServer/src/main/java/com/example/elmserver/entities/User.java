@@ -18,8 +18,8 @@ import java.util.Arrays;
 public class User extends AbstractDomainEntity{
     @Id//设置主键
     @Schema(description = "主键")
-    @Column(nullable = false)//重命名字段名字,非空
-    private int id;
+    @Column(length = 20,nullable = false)//重命名字段名字,非空
+    private String id;
     @Column(length = 20,nullable = false)//设置字段的最大长度为20,非空
     private String password;
     @Column(length = 20,nullable = false)//设置字段的最大长度为40,非空

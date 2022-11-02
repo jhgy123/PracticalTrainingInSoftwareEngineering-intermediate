@@ -37,6 +37,8 @@ public class Admin extends AbstractDomainEntity{
     @Column(length = 40)//设置字段的最大长度为20,非空
     private String remarks;
 
+    private byte[] img; //头像，存储的是图片
+
     @Override
     public String toString() {
         return "Admin{" +

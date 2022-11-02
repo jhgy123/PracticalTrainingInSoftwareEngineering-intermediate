@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.lang.Nullable;
 import org.springframework.util.CollectionUtils;
 
@@ -86,6 +87,7 @@ public class AbstractTypedService<T extends AbstractDomainEntity, IdType>
      */
     @Operation(summary = "分页查询数据对象")
     public Page<T> pageQuery(Pageable pageable) {
+//        System.out.println(pageable);
         return this.pageQuery(pageable, null);
     }
 
@@ -100,8 +102,15 @@ public class AbstractTypedService<T extends AbstractDomainEntity, IdType>
     @Operation(summary = "分页查询数据对象")
     public Page<T> pageQuery(Pageable pageable, @Valid AbstractQueryCondition condition) {
         // ToDo:这个部分需要思考如何进行.
-        var sb = condition.builderCondition();
-        // builderCondition(condition);
+//        System.out.println(condition);
+        Specification<T> sb;
+        if(condition!=null){
+            sb = condition.builderCondition();
+        }
+        else{
+            sb=null;
+        }
+//         builderCondition(condition);
 
         return dataContext.queryPage(pageable, sb);
     }

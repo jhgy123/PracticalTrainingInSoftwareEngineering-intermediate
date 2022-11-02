@@ -28,7 +28,7 @@ public class Food extends AbstractDomainEntity{
     @Schema(description = "主键")
     @GeneratedValue(strategy= GenerationType.IDENTITY)//该字段自增
     @Column(nullable = false)//重命名字段名字,非空
-    private int foodId;
+    private int id;
 
     @Column(length = 30,nullable = false)//重命名字段名字、设置字段的最大长度为30,非空
     private String foodName;
@@ -50,7 +50,7 @@ public class Food extends AbstractDomainEntity{
     @Override
     public String toString() {
         return "Food{" +
-                "foodId=" + foodId +
+                "foodId=" + id +
                 ", foodName='" + foodName + '\'' +
                 ", foodExplain='" + foodExplain + '\'' +
                 ", img=" + Arrays.toString(img) +

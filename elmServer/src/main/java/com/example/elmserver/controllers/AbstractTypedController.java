@@ -51,6 +51,7 @@ public class AbstractTypedController<T extends AbstractDomainEntity, IdType> {
     @Operation(summary = "查询 分页")
     @RequestMapping(value = "/page", method = RequestMethod.GET)
     public Page<T> pageQuery(Pageable pageable) {
+//        System.out.println(pageable);
         return svcContext.pageQuery(pageable);
     }
 
@@ -61,6 +62,8 @@ public class AbstractTypedController<T extends AbstractDomainEntity, IdType> {
      * @param pageable  分页
      * @return
      */
+//    @Operation(summary = "查询 分页")
+//    @RequestMapping(value = "/page", method = RequestMethod.GET)
     public Page<T> pageQueryBy(@ModelAttribute AbstractQueryCondition condition, Pageable pageable) {
         return svcContext.pageQuery(pageable, condition);
     }

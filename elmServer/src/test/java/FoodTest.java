@@ -25,7 +25,7 @@ public class FoodTest {
         OldBusinessDao ad=new OldBusinessDao();
         Food admin=  Food.builder()
                 .foodName("wwww")
-                .foodId(1009)
+                .id(1009)
                 .foodPrice(100)
                 .business(ad.getOne(13))
                 .build();

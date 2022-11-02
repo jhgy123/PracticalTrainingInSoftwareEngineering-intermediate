@@ -1,8 +1,7 @@
-package com.example.elmserver.controllers.admin;
+package com.example.elmserver.controllers.api.admin;
 
 
 import com.example.elmserver.controllers.AbstractTypedController;
-import com.example.elmserver.dao.AdminDao;
 import com.example.elmserver.entities.Admin;
 import com.example.elmserver.service.AdminService;
 import io.swagger.v3.oas.annotations.Operation;

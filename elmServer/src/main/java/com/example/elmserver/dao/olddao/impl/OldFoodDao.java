@@ -33,7 +33,7 @@ public class OldFoodDao implements IFoodDao{
                 "',foodExplain='"+s.getFoodExplain() +
                 "',foodPrice="+s.getFoodPrice()+
                 ",business_id="+s.getBusiness().getId()+
-                "where foodId="+s.getFoodId();
+                "where foodId="+s.getId();
         var resultnum=dbhelper.executeUpdate(sql);
         return resultnum>0;
     }
@@ -52,7 +52,7 @@ public class OldFoodDao implements IFoodDao{
         var resultset=dbhelper.executeQuery(sql);
         if(resultset.next()) {
             var food = Food.builder()
-                    .foodId(resultset.getInt("foodId"))
+                    .id(resultset.getInt("foodId"))
                     .foodName(resultset.getString("foodName"))
                     .foodExplain(resultset.getString("foodExplain"))
                     .foodPrice(resultset.getDouble("foodPrice"))
@@ -75,7 +75,7 @@ public class OldFoodDao implements IFoodDao{
         var resultset=dbhelper.executeQuery(sql);
         while(resultset.next()){
             var food = Food.builder()
-                    .foodId(resultset.getInt("foodId"))
+                    .id(resultset.getInt("foodId"))
                     .foodName(resultset.getString("foodName"))
                     .foodExplain(resultset.getString("foodExplain"))
                     .foodPrice(resultset.getDouble("foodPrice"))
@@ -96,7 +96,7 @@ public class OldFoodDao implements IFoodDao{
         var resultset=dbhelper.executeQuery(sql);
         while(resultset.next()){
             var food = Food.builder()
-                    .foodId(resultset.getInt("foodId"))
+                    .id(resultset.getInt("foodId"))
                     .foodName(resultset.getString("foodName"))
                     .foodExplain(resultset.getString("foodExplain"))
                     .foodPrice(resultset.getDouble("foodPrice"))

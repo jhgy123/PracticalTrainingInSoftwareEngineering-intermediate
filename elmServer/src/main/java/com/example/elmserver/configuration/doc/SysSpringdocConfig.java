@@ -29,22 +29,12 @@ public class SysSpringdocConfig {
 
     // }
     @Bean
-    public GroupedOpenApi adminApi() {
+    public GroupedOpenApi elmApi() {
         return GroupedOpenApi.builder()
-                .group("系统管理-管理员")
-                .packagesToScan("com.example.elmserver.controllers.admin")
+                .group("API管理-elm系统")
+                .packagesToScan("com.example.elmserver.controllers.api")
 //                  .addOpenApiCustomiser(jwtHeaderOpenApiCustomiser())
                 .build();
 
     }
-//    @Bean
-//    public GroupedOpenApi menuApi() {
-//        return GroupedOpenApi.builder()
-//                .group("系统管理-test")
-//                .packagesToScan("com.example.elmserver.controllers.oldcontrollers")
-////                  .addOpenApiCustomiser(jwtHeaderOpenApiCustomiser())
-//                .build();
-//
-//    }
-
 }
