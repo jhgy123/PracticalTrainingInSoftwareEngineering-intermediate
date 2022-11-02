@@ -1,9 +1,6 @@
 package com.example.elmserver.dao;
 
-
 import com.example.elmserver.entities.Business;
-
-import java.util.Collection;
 import java.util.List;
 
 public interface BusinessDao extends AbstractDao<Business, Integer>{

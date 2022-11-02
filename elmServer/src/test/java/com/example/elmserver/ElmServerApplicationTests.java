@@ -1,13 +1,7 @@
 package com.example.elmserver;
 
-import com.example.elmserver.dao.BusinessDao;
-import com.example.elmserver.dao.DeliveryaddressDao;
-import com.example.elmserver.dao.FoodDao;
-import com.example.elmserver.dao.UserDao;
-import com.example.elmserver.entities.Business;
-import com.example.elmserver.entities.Deliveryaddress;
-import com.example.elmserver.entities.Food;
-import com.example.elmserver.entities.User;
+import com.example.elmserver.dao.*;
+import com.example.elmserver.entities.*;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -32,6 +26,10 @@ class ElmServerApplicationTests {
     UserDao userdao;
     @Resource
     DeliveryaddressDao ddao;
+    @Resource
+    OrdersDao odao;
+    @Resource
+    OrderdetailetDao oddao;
     @Test
     void BusinessDaoTest() {
 //        Collection<Integer> collection=new ArrayList<Integer>();
@@ -46,8 +44,10 @@ class ElmServerApplicationTests {
 //        List<Food> list= fooddao.findAllByBusiness(Business.builder().name("testbusiness3").password("777").id(1).address("wfjwofj").build());
 //        List<Deliveryaddress> list=ddao.findAllByUser(User.builder().id("1").name("OOO").password("SSS").build());
 //        System.out.println(list.get(0));
-         User u=userdao.findUserByIdAndPassword("1","www");
-        System.out.println(u);
+//         User u=userdao.findUserByIdAndPassword("1","www");
+        List<Orderdetailet> list=oddao.findAllByOrders(Orders.builder().id(1).build());
+        System.out.println(list.get(0));
+        System.out.println(list.get(1));
     }
 
 

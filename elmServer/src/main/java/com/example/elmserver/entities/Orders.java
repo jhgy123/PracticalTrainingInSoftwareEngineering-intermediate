@@ -31,5 +31,5 @@ public class Orders extends AbstractDomainEntity{
     @ManyToOne(targetEntity = Deliveryaddress.class)//设置对应的实体类的类型(默认Deliveryaddress的主键作为外键）
     private Deliveryaddress deliveryaddress;
     @Column(columnDefinition="bit default 0")//默认值0
-    private Boolean OrderState;//默认值0（未支付）
+    private Boolean orderState;//默认值0（未支付）
 }
