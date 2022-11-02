@@ -44,8 +44,10 @@ class ElmServerApplicationTests {
 //                .address("wfjwofj").build());
 //        Map<Integer, Business> map=businessdao.findMapByPrimaryKeyIn(collection);
 //        List<Food> list= fooddao.findAllByBusiness(Business.builder().name("testbusiness3").password("777").id(1).address("wfjwofj").build());
-        List<Deliveryaddress> list=ddao.findAllByUser(User.builder().id("1").name("OOO").password("SSS").build());
-        System.out.println(list.get(0));
+//        List<Deliveryaddress> list=ddao.findAllByUser(User.builder().id("1").name("OOO").password("SSS").build());
+//        System.out.println(list.get(0));
+         User u=userdao.findUserByIdAndPassword("1","www");
+        System.out.println(u);
     }
 
 
