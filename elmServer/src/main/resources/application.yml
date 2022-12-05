@@ -4,7 +4,7 @@ server:
 spring:
   application:
     name: "elmServer"
-#    配置security登录用户和密码
+##    配置security登录用户和密码
   security:
     user:
       name: admin

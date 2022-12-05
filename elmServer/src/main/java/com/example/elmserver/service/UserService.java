@@ -21,6 +21,23 @@ public class UserService extends AbstractTypedService<User, String>{
         this.miDao = dao;
     }
 
+    public User getUserById(String id) {
+        if (id == null || id == "") {
+            return null;
+        }
+        return miDao.findById(id).orElse(null);
+    }
+
+    /**
+     * @return User
+     */
+    public User getUserByUserName(String userName) {
+
+        var us = this.miDao.findUserByUsername(userName);
+
+        return us;
+    }
+
     @Operation(summary = "根据用户id和密码查询用户")
     public User queryUserByIdAndPassword(String id,String password){
         if(id==""||password==""||id==null||password==null){

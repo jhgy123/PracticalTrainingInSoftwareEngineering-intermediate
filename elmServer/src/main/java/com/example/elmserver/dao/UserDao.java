@@ -10,4 +10,5 @@ public interface UserDao extends AbstractDao<User, String>{
      * @return User 用户对象/。/
      */
     User findUserByIdAndPassword(String id,String password);
+    User findUserByUsername(String username);
 }
