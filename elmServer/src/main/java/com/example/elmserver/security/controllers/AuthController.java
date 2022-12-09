@@ -14,10 +14,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.util.ObjectUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -47,7 +44,7 @@ public class AuthController {
 
     @Resource
     private HttpServletResponse response;
-
+    @CrossOrigin
     @Operation(summary = "登录接口")
     @PostMapping("/auth-token")
     public void auth(@RequestBody @Valid LoginCommand command) throws IOException, ServletException {

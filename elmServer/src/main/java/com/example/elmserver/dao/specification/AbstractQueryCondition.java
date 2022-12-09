@@ -1,9 +1,6 @@
 package com.example.elmserver.dao.specification;
-
 import org.springframework.data.jpa.domain.Specification;
-
 import java.util.List;
-
 /**
  * 查询条件
  */

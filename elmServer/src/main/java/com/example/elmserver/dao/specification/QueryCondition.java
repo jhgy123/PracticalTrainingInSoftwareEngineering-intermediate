@@ -1,7 +1,5 @@
 package com.example.elmserver.dao.specification;
-
 import lombok.Data;
-
 /**
  * 查询条件表达式
  *

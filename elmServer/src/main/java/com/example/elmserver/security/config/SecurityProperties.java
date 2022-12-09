@@ -1,14 +1,16 @@
 package com.example.elmserver.security.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-
-@ConfigurationProperties(prefix = "business.security")
+//@Configuration
+//@ConfigurationProperties(prefix = "business.security")
+@ConfigurationProperties(prefix = "security")
 public class SecurityProperties {
 
 	private List<CorsProperties> cors = Collections.singletonList(new CorsProperties());
