@@ -1,0 +1,140 @@
+<div class="bodyPad">
+
+  <div class="mainPad">
+    <div class="headPad">
+      <div class="pl-4">
+        <i class="fas fa-map-marker-alt"></i>
+        呈贡大学城-云南大学
+        <i class="fas fa-angle-down"></i>
+      </div>
+      <div class="m-4">
+        <input type="text" placeholder="搜索饿了么商家，商铺名称"/>
+      </div>
+    </div>
+    <div>
+      <!--商品分类-->
+      <div class="cataMenu">
+        <div class="grid grid-cols-5 gap-2  text-center">
+          <div [routerLink]="['/businesslist']">
+            <img src="assets/images/美食.png">
+            美食
+          </div>
+          <div  [routerLink]="['/businesslist']">
+            <img src="assets/images/早餐.png">
+            早餐
+          </div>
+          <div  [routerLink]="['/businesslist']">
+            <img src="assets/images/跑腿代购.png">
+            跑腿代购
+          </div>
+          <div  [routerLink]="['/businesslist']">
+            <img src="assets/images/汉堡披萨.png">
+            汉堡披萨
+          </div>
+          <div  [routerLink]="['/businesslist']">
+            <img src="assets/images/甜品饮品.png">
+            甜品饮品
+          </div>
+          <div  [routerLink]="['/businesslist']">
+            <img src="assets/images/速食简餐.png">
+            速食简餐
+          </div>
+          <div  [routerLink]="['/businesslist']">
+            <img src="assets/images/地方小吃.png">
+            地方小吃
+          </div>
+          <div  [routerLink]="['/businesslist']">
+            <img src="assets/images/米粉面馆.png">
+            米粉面馆
+          </div>
+          <div  [routerLink]="['/businesslist']">
+            <img src="assets/images/包子粥铺.png">
+            包子粥铺
+          </div>
+          <div  [routerLink]="['/businesslist']">
+            <img src="assets/images/炸鸡炸串.png">
+            炸鸡炸串
+          </div>
+        </div>
+      </div>
+      <!--广告-->
+      <div class="adPad">
+        <a href="#">
+          <img src="assets/images/广告.jpg"/>
+        </a>
+      </div>
+      <!--商家推荐列表-->
+      <div class="businessPad">
+        <div class="titlePad text-xl">
+          <!--                    span显示横杠-->
+          <span></span>
+          推荐商家
+          <span></span>
+        </div>
+        <div class="searchBar">
+          <div>综合排序<i class="fas fa-sort-down"></i></div>
+          <div>距离最近</div>
+          <div>销量最高</div>
+          <div>筛选<i class="fas fa-filter"></i></div>
+        </div>
+        <div class="businessList">
+          <div class="businessCard" *ngFor="let i of allbusiness">
+            <div class="businessIcon">
+              <img src="data:image/jpeg;base64,{{i.img}}">
+            </div>
+            <div class="businessInfo">
+              <div>{{i.name}}</div>
+              <div>
+                <div class="flex text-center gap-6">
+                  <div class="flex w-35" >
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    4.9月销售992
+                  </div>
+                  <div class="flex-none">
+                    <p class="text-white bg-sky-500 ">蜂鸟快送</p>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-center">
+                  <div>￥{{i.starPrice}}起送|￥{{i.deliveryPrice}}配送</div>
+                  <div>3.22km|30分钟</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="barPad">
+    <div [routerLink]="['/index']">
+      <!--        页面跳转-->
+      <i class="far fa-home"></i>
+      <br/>
+      首页
+    </div>
+    <div>
+      <i class="fas fa-compass"></i>
+      <br/>
+      发现
+    </div>
+    <div [routerLink]="['/historicalorders']">
+      <i class="fas fa-receipt"></i>
+      <br/>
+      订单
+    </div>
+    <div>
+      <i class="fas fa-user"></i>
+      <br/>
+      我的
+    </div>
+  </div>
+
+</div>
+
+

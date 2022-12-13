@@ -1,0 +1,96 @@
+<div class="bodyPad">
+
+  <div class="mainPad">
+    <div class="headPad">
+      <div class="m-2 text-white">
+        <div class="text-center text-xl">确认订单</div>
+      </div>
+      <span ></span>
+      <div class="p-2">
+        <div class="text-left text-sm m-0.5">订单配送至</div>
+        <div class="text-left p-0.5 semibold">{{myaddress_address}} <i class="fas fa-angle-right text-right"></i></div>
+        <div class="text-left text-sm mx-0.5">{{myaddress_contactName}} {{myaddress_contactTel}}</div>
+      </div>
+
+    </div>
+
+    <div class="businessname">
+      <!--            <img src="assets/images/饺子店图.jpg">-->
+      <div class="antialiased font-black text-base text-center my-1">{{businessname}}</div>
+      <span></span>
+      <!--            <div class="text-xl text-yellow-600">￥15起送|￥3配送</div>-->
+      <!--            <div class="text-sm">结合现代健康饮食理念，精选上好食材，为顾客提供真材实料、现包现煮的美味健康水饺。</div>-->
+    </div>
+
+
+    <div class="foodList">
+      <div class="foodCard" *ngFor="let i of carts">
+        <div class="foodIcon">
+          <img src="data:image/jpeg;base64,{{i.food.img}}">
+        </div>
+        <div class="foodInfo">
+          <!--                    <div>蟹黄饺子(蒸饺）</div>-->
+          <div>
+            <div class="flex text-center gap-24">
+              <div class="flex w-35" >
+                {{i.food.foodName}}
+              </div>
+              <div class="flex-none">
+                <p class=" m-1 text-base">￥{{i.food.foodPrice}}</p>
+              </div>
+
+            </div>
+            <div class="flex text-center gap-6">
+              <div class="flex w-35" >
+                推荐指数：
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="flex-none">
+                <p><i class="fal fa-times" style="color:black">&nbsp;</i>&nbsp;&nbsp;{{i.quantity}}&nbsp;&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span></span>
+      <div class="freightCard">
+        <div class="freightInfo">
+          <div class="flex text-center gap-x-64">
+            <div class="flex w-2/3 ml-1" >
+              配送费
+            </div>
+            <div class="flex-none">
+              <p class="text-base m-1">{{deveprice}}元</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <span></span>
+
+    </div>
+  </div>
+
+  <div class="barPad">
+
+    <div class="buttonPad  flex flex-row" >
+
+      <a class="btn btn-full btn-flat btn-black basis-8/12">
+        <i class="fal fa-shopping-cart" style="color:white"></i>
+        <div>总共：￥{{total}}(包含配送费{{deveprice}}元)</div>
+      </a>
+      <a class="btn btn-full btn-flat btn-green basis-4/12 text-xl"  [routerLink]="['/payment']"
+         [queryParams]="{cartids:cartids,busname:businessname,
+         dprice:deveprice,totalfee:total,businessid:businessid,addid:myaddress_id}">
+        <i class="fas fa-sign-in-alt"></i>
+        去支付
+      </a>
+    </div>
+  </div>
+
+</div>

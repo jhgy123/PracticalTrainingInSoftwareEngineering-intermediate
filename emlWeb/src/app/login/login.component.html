@@ -1,0 +1,87 @@
+<div class="bodyPad">
+
+  <div class="mainPad">
+    <div class="headPad">
+      <div class="m-2 text-white">
+        <div class="text-center text-xl">用户登录</div>
+      </div>
+    </div>
+    <form>
+      <div class="flex text-center gap-0 my-3">
+
+        <div class="flex w-18 text-base text-center" >
+          用户名：
+          <!--                <i class="fal fa-times" style="color:black">&nbsp;</i>-->
+          <!--                <i class="fas fa-minus-circle" style="color:grey"></i>&nbsp;&nbsp;1&nbsp;&nbsp;-->
+          <!--                <i class="fas fa-plus-circle" style="color:dodgerblue"></i>-->
+        </div>
+        <div class="flex-none w-3/4 text-right">
+          <input class="w-full" type="text" placeholder="用户名" [(ngModel)]="username" name="username">
+        </div>
+      </div>
+      <div class="flex text-center gap-0 my-3">
+        <div class="flex w-18 text-base text-center" >
+          密码：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!--                <i class="fal fa-times" style="color:black">&nbsp;</i>-->
+          <!--                <i class="fas fa-minus-circle" style="color:grey"></i>&nbsp;&nbsp;1&nbsp;&nbsp;-->
+          <!--                <i class="fas fa-plus-circle" style="color:dodgerblue"></i>-->
+        </div>
+        <div class="flex-none w-3/4 text-right">
+          <input class="w-full" type="password" placeholder="密码：" [(ngModel)]="password" name="password">
+        </div>
+      </div>
+
+      <div>{{inf}}</div>
+      <span ></span>
+      <div class="buttonPad m-2 flex flex-row">
+        <a class="btn btn-full btn-green  text-xl" (click)="login()">
+          <i class="fas fa-sign-in-alt"></i>
+          登录
+        </a>
+        <!--            <a class="btn btn-full btn-blue">-->
+        <!--                <i class="fas fa-sign-out-alt"></i>-->
+        <!--                退出-->
+        <!--            </a>-->
+      </div>
+    </form>
+    <div class="buttonPad m-2 flex flex-row" >
+      <a class="btn btn-full btn-gray  text-xl" [routerLink]="['/register']">
+        <!--                <i class="fas fa-sign-in-alt"></i>-->
+        去注册
+      </a>
+      <!--            <a class="btn btn-full btn-blue">-->
+      <!--                <i class="fas fa-sign-out-alt"></i>-->
+      <!--                退出-->
+      <!--            </a>-->
+    </div>
+
+
+  </div>
+
+
+
+<!--  <div class="barPad">-->
+<!--    <div onclick="location.href='./index.html'">-->
+<!--      &lt;!&ndash;        页面跳转&ndash;&gt;-->
+<!--      <i class="fas fa-home"></i>-->
+<!--      <br/>-->
+<!--      首页-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <i class="fas fa-compass"></i>-->
+<!--      <br/>-->
+<!--      发现-->
+<!--    </div>-->
+<!--    <div onclick="location.href='./order.html'">-->
+<!--      <i class="fas fa-receipt"></i>-->
+<!--      <br/>-->
+<!--      订单-->
+<!--    </div>-->
+<!--    <div>-->
+<!--      <i class="far fa-user"></i>-->
+<!--      <br/>-->
+<!--      我的-->
+<!--    </div>-->
+<!--  </div>-->
+
+</div>

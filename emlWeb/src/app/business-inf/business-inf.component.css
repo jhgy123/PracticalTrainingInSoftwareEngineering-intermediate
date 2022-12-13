@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.headPad {
+  @apply flex flex-col text-white bg-sky-400 sticky
+  top-0 w-full z-50;
+}
+
+.mainPad {
+  /*border: 1px solid red;*/
+  height: 90vh;
+  overflow: scroll;
+  @apply relative;
+}
+
+.foodCard {
+  @apply space-x-2 m-1 rounded-xl shadow-lg  flex flex-row ;
+}
+
+.foodCard img {
+  @apply h-24 w-20;
+}
+
+.foodCard .foodInfo {
+  @apply flex flex-col  space-y-3;
+}
+
+.foodCard .foodInfo .fa-star {
+  @apply text-yellow-400;
+}
+
+.mainPad {
+  /*border: 1px solid red;*/
+  height: 90vh;
+  overflow: scroll;
+  @apply relative;
+}
+
+.bodyPad {
+  @apply overflow-y-scroll w-full h-full;
+}
+.businessintroduce{
+  @apply flex flex-col items-center shadow-md;
+}
+
+.businessintroduce img {
+  @apply h-36 w-48 self-center p-2.5 ;
+}
+
+
+.btn {
+  @apply inline-block h-20 w-full rounded flex text-center  items-center justify-center;
+}
+.btn-flat {
+  @apply rounded-none;
+}
+.btn-green {
+  @apply bg-green-500 text-white;
+}
+.btn-blue {
+  @apply bg-blue-500 text-white;
+}
+.btn-black {
+  @apply bg-gray-500 text-white ;
+}
+.btn-full {
+  @apply w-full;
+}

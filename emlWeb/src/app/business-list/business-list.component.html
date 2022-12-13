@@ -1,0 +1,66 @@
+<div class="bodyPad">
+
+  <div class="mainPad">
+    <div class="headPad">
+      <div class="m-4">
+        <div class="text-center text-xl">商家列表</div>
+      </div>
+    </div>
+    <div class="businessList">
+      <div class="businessCard" *ngFor="let i of allbusiness">
+        <div class="businessIcon">
+          <img src="data:image/jpeg;base64,{{i.img}}">
+        </div>
+        <div class="businessInfo" [routerLink]="['/businessinf']" [queryParams]="{busid:i.id}">
+          <div>{{i.name}}</div>
+          <div>
+            <div class="flex text-center gap-6">
+              <div class="flex w-35" >
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                4.9月销售992
+              </div>
+              <div class="flex-none">
+                <p class="text-white bg-sky-500 ">蜂鸟快送</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 text-center">
+              <div>￥{{i.starPrice}}起送|￥{{i.deliveryPrice}}配送</div>
+              <div>3.22km|30分钟</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="barPad">
+    <div [routerLink]="['/index']">
+      <!--        页面跳转-->
+      <i class="far fa-home"></i>
+      <br/>
+      首页
+    </div>
+    <div>
+      <i class="fas fa-compass"></i>
+      <br/>
+      发现
+    </div>
+    <div [routerLink]="['/historicalorders']">
+      <i class="fas fa-receipt"></i>
+      <br/>
+      订单
+    </div>
+    <div>
+      <i class="fas fa-user"></i>
+      <br/>
+      我的
+    </div>
+  </div>
+
+</div>

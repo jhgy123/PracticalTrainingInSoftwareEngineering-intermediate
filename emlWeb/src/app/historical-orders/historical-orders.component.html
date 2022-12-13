@@ -1,0 +1,153 @@
+<div class="bodyPad">
+
+  <div class="mainPad">
+    <div class="headPad">
+      <div class="m-2 text-white">
+        <div class="text-center text-xl">我的订单</div>
+      </div>
+    </div>
+
+    <div class="orderInf ml-1">
+      <div class="antialiased text-lg text-left my-2 bold">未支付订单信息：</div>
+    </div>
+    <div class="orderOfBusiness"  *ngFor="let i of nopay" >
+      <div class="totalCard" id="{{i.id}}">
+        <div class="totalInfo">
+          <div class="flex text-center gap-x-2">
+            <div class="flex w-5/6 ml-1 text-lg" >
+              {{(i.business).name}}<i class="fas fa-angle-down my-1" (click)="getlist(i.id)"></i>
+            </div>
+            <div class="flex-none">
+              <p class="text-xl m-1 text-red-500 text-right">￥{{i.orderTotal}}</p>
+            </div>
+            <div class="flex-none">
+              <p class="text-white bg-red-600 m-1">未支付</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="order-detailet" [hidden]="flag">
+        <div class="foodList">
+          <div class="foodCard" *ngFor="let i of detailetlist">
+            <div class="foodInfo">
+              <div>
+                <div class="flex text-center gap-40">
+                  <div class="flex w-35" >
+                    {{(i.food).foodName}}&nbsp;&nbsp;
+                    <i class="fal fa-times my-1" style="color:black">&nbsp;</i>{{i.quantity}}
+                  </div>
+                  <div class="flex-none">
+                    ￥{{(i.food).foodPrice}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="foodCard">
+            <div class="foodInfo">
+              <div>
+                <div class="flex text-center gap-x-64">
+                  <div class="flex w-35" >
+                    配送费&nbsp;&nbsp;
+                  </div>
+                  <div class="flex-none">
+                    ￥{{(i.business).deliveryPrice}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <span ></span>
+    <div class="orderInf ml-1">
+      <div class="antialiased text-lg text-left my-2 bold">已支付订单信息：</div>
+    </div>
+    <div class="orderOfBusiness" *ngFor="let i of payed;let myindex=index">
+      <div class="totalCard" id="id{{i.id}}">
+        <div class="totalInfo">
+          <div class="flex text-center gap-x-2">
+            <div class="flex w-5/6 ml-1 text-lg" >
+              {{(i.business).name}}<i class="fas fa-angle-down my-1" (click)="getlist(i.id)"></i>
+            </div>
+            <div class="flex-none">
+              <p class="text-xl m-1 text-right">￥{{i.orderTotal}}</p>
+            </div>
+            <div class="flex-none">
+              <p class="text-white bg-blue-600 m-1">已支付</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="order-detailet" [hidden]='flag'>
+        <div class="foodList">
+          <div class="foodCard" *ngFor="let i of detailetlist">
+            <div class="foodInfo">
+              <div>
+                <div class="flex text-center gap-40">
+                  <div class="flex w-35" >
+                    {{(i.food).foodName}}&nbsp;&nbsp;
+                    <i class="fal fa-times my-1" style="color:black">&nbsp;</i>{{i.quantity}}
+                  </div>
+                  <div class="flex-none">
+                    ￥{{(i.food).foodPrice}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="foodCard">
+            <div class="foodInfo">
+              <div>
+                <div class="flex text-center gap-x-64">
+                  <div class="flex w-35" >
+                    配送费&nbsp;&nbsp;
+                  </div>
+                  <div class="flex-none">
+                    ￥{{(i.business).deliveryPrice}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="barPad">
+    <div [routerLink]="['/index']">
+      <!--        页面跳转-->
+      <i class="far fa-home"></i>
+      <br/>
+      首页
+    </div>
+    <div>
+      <i class="fas fa-compass"></i>
+      <br/>
+      发现
+    </div>
+    <div [routerLink]="['/historicalorders']">
+      <i class="fas fa-receipt"></i>
+      <br/>
+      订单
+    </div>
+    <div>
+      <i class="fas fa-user"></i>
+      <br/>
+      我的
+    </div>
+  </div>
+
+</div>

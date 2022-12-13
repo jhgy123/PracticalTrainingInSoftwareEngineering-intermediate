@@ -1,0 +1,123 @@
+<div class="bodyPad">
+
+  <div class="mainPad">
+    <div class="headPad">
+      <div class="m-2 text-white">
+        <div class="text-center text-xl">在线支付</div>
+      </div>
+    </div>
+
+    <div class="orderInf ml-1">
+      <div class="antialiased text-lg text-left my-2">订单信息：</div>
+    </div>
+    <div class="totalCard">
+      <div class="totalInfo">
+        <div class="flex text-center gap-x-16">
+          <div class="flex w-5/6 ml-1 text-lg" >
+            {{busname}}<i class="fas fa-angle-down my-1"></i>
+          </div>
+          <div class="flex-none">
+            <p class="text-xl m-1 text-red-500 text-right">￥{{total}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foodList">
+      <div class="foodCard" *ngFor="let i of foods">
+        <div class="foodInfo">
+          <div>
+            <div class="flex text-center gap-24">
+              <div class="flex w-35" >
+                {{i.food.foodName}}&nbsp;&nbsp;
+                <i class="fal fa-times my-1" style="color:black">&nbsp;</i>
+                &nbsp;&nbsp;{{i.quantity}}&nbsp;&nbsp;
+              </div>
+              <div class="flex-none">
+                ￥{{i.food.foodPrice}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="foodCard">
+        <div class="foodInfo">
+          <div>
+            <div class="flex text-center gap-x-64">
+              <div class="flex w-35" >
+                配送费&nbsp;
+              </div>
+              <div class="flex-none">
+                ￥{{deprice}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <span ></span>
+    <div class="payCard">
+      <div class="payInfo">
+        <div>
+          <div class="flex text-center gap-44 m-1">
+            <div class="payIcon">
+              <img class="m-1" src="assets/images/wechat.png">
+            </div>
+            <div class="flex-none">
+              <p class="text-base m-2"><i class="fas fa-check-circle" style="color:green"></i></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="payCard">
+      <div class="payInfo">
+
+        <div>
+          <div class="flex text-center gap-44 m-1">
+            <div class="payIcon">
+              <img class="m-1" src="assets/images/alipay.png">
+            </div>
+            <div class="flex-none">
+              <p class="text-base m-2"><i class="fas fa-check-circle" style="color:grey"></i></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span ></span>
+    <div class="buttonPad mx-2 flex flex-row" (click)="payorder()">
+      <a class="btn btn-full btn-green  text-xl">
+        <i class="fas fa-check"></i>
+        确认支付
+      </a>
+    </div>
+  </div>
+
+  <div class="barPad">
+    <div [routerLink]="['/index']">
+      <!--        页面跳转-->
+      <i class="far fa-home"></i>
+      <br/>
+      首页
+    </div>
+    <div>
+      <i class="fas fa-compass"></i>
+      <br/>
+      发现
+    </div>
+    <div [routerLink]="['/historicalorders']">
+      <i class="fas fa-receipt"></i>
+      <br/>
+      订单
+    </div>
+    <div>
+      <i class="fas fa-user"></i>
+      <br/>
+      我的
+    </div>
+  </div>
+
+</div>

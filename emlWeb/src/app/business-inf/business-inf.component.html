@@ -1,0 +1,70 @@
+<div class="bodyPad">
+
+  <div class="mainPad">
+    <div class="headPad">
+      <div class="m-4">
+        <div class="text-center text-xl">商家信息</div>
+      </div>
+
+    </div>
+
+    <div class="businessintroduce">
+      <img src="data:image/jpeg;base64,{{img}}">
+      <div class="antialiased font-black text-2xl"></div>
+      <div class="text-xl text-yellow-600">￥{{starPrice}}起送|￥{{deliveryPrice}}配送</div>
+      <div class="text-sm">{{explain}}</div>
+    </div>
+
+
+    <div class="foodList">
+      <div class="foodCard" *ngFor="let i of allfood;let myindex=index">
+        <div class="foodIcon">
+          <img src="data:image/jpeg;base64,{{i.img}}">
+        </div>
+        <div class="foodInfo">
+          <div>{{i.foodName}}</div>
+          <div>
+            <div class="flex text-center gap-16">
+              <div class="flex w-35" >
+                {{i.foodExplain}}￥{{i.foodPrice}}
+              </div>
+              <div class="flex-none">
+                <p class="text-white bg-red-400 m-1">店长推荐</p>
+              </div>
+
+            </div>
+            <div class="flex text-center gap-6">
+              <div class="flex w-35" >
+                推荐指数：
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="flex-none">
+                <p ><i class="fas fa-minus-circle" style="color:grey" (click)="sub(myindex)"></i>&nbsp;&nbsp;{{foodnums.at(myindex)}}&nbsp;&nbsp;<i class="fas fa-plus-circle" style="color:dodgerblue" (click)="add(myindex)"></i></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="barPad">
+
+    <div class="buttonPad  flex flex-row">
+
+      <a class="btn btn-full btn-flat btn-black basis-8/12">
+        <i class="fal fa-shopping-cart" style="color:white"></i>
+        <div>总共：￥{{totalfee}}(另需配送费{{deliveryPrice}}元)</div>
+      </a>
+      <a class="btn btn-full btn-flat btn-green basis-4/12 text-xl" (click)="addcart()">
+        <i class="fas fa-sign-in-alt"></i>
+        去结算
+      </a>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.headPad {
+  @apply flex flex-col bg-sky-400 sticky
+  top-0 w-full z-50;
+}
+
+.mainPad {
+  /*border: 1px solid red;*/
+  height: 90vh;
+  overflow: scroll;
+  @apply relative;
+}
+
+.bodyPad {
+  @apply overflow-y-scroll w-full h-full;
+}
+
+.barPad {
+  @apply flex flex-row h-20 justify-center content-center items-center
+  border border-solid border-gray-300 shadow-lg
+  bottom-0 sticky;
+}
+
+.barPad div {
+  @apply basis-1/4 text-center justify-center;
+}
+
+/*图标字体大小*/
+.barPad i {
+  @apply text-2xl;
+}
+
+
+.foodCard {
+  @apply space-x-2 m-1 rounded-xl  flex flex-row ;
+}
+
+.foodCard img {
+  @apply h-24 w-20;
+}
+
+.foodCard .foodInfo {
+  @apply flex flex-col  space-y-3;
+}
+
+.foodCard .foodInfo .fa-star {
+  @apply text-yellow-400;
+}
+
+.totalCard {
+  @apply space-x-2 m-1 rounded-xl shadow-lg flex flex-row ;
+}
+
+.totalCard .totalInfo {
+  @apply flex flex-col  space-y-3;
+}
+
+.payCard {
+  @apply space-x-2 m-1 rounded-xl flex flex-row ;
+}
+
+.payCard img {
+  /*@apply h-14 w-10;*/
+}
+
+.payCard .payInfo {
+  @apply flex flex-col  space-y-3;
+}
+
+.payCard .payInfo .fa-star {
+  @apply text-yellow-400;
+}
+
+span{
+  @apply inline-block w-full h-px bg-slate-500;
+}
+
+.btn {
+  @apply inline-block h-10 w-24 rounded flex text-center  items-center justify-center;
+}
+.btn-flat {
+  @apply rounded-none;
+}
+.btn-green {
+  @apply bg-green-600 text-white;
+}
+.btn-blue {
+  @apply bg-blue-500 text-white;
+}
+.btn-black {
+  @apply bg-black text-white;
+}
+.btn-full {
+  @apply w-full;
+}
