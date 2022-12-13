@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity//将Course类映射到数据库中
 @Table(name = "orders_inf")//重命名表名
@@ -24,8 +25,7 @@ public class Orders extends AbstractDomainEntity{
     private User user;
     @ManyToOne(targetEntity = Business.class)//设置对应的实体类的类型(默认Business的主键作为外键）
     private Business business;
-    @Column(length = 20,nullable = false)//设置字段的最大长度为20,非空
-    private String orderDate;
+    private Date orderDate;
     @Column(precision = 7,scale =2,columnDefinition="decimal(5,2) default 0.0")//设置字段数字宽度为7，小数位数为2，设置字段默认值为0.0
     private double orderTotal;
     @ManyToOne(targetEntity = Deliveryaddress.class)//设置对应的实体类的类型(默认Deliveryaddress的主键作为外键）

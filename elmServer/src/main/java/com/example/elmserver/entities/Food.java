@@ -36,7 +36,9 @@ public class Food extends AbstractDomainEntity{
     @Column(length = 30)//重命名字段名字、设置字段的最大长度为30
     private String foodExplain;
 
-    private byte[] img; //头像，存储的是图片
+    @Lob
+    @Column(columnDefinition="TEXT")
+    private String img; //头像，存储的是图片
     @Column(precision = 5,scale =2,nullable = false,columnDefinition="decimal(5,2) default 0.0")//重命名字段名字、设置字段数字宽度为5，小数位数为2，非空,默认值0.0
     private double foodPrice;
 
@@ -44,7 +46,7 @@ public class Food extends AbstractDomainEntity{
     @ManyToOne(targetEntity = Business.class)//设置对应的实体类的类型(默认Business的主键作为外键）
 //    @JoinColumn(name = "bussinessid")//重新设置外键的名称
     private Business business;
-    @Column(length = 40)//设置字段的最大长度为20,非空
+    @Column(length = 400)//设置字段的最大长度为20,非空
     private String remarks;
 
     @Override
@@ -53,7 +55,6 @@ public class Food extends AbstractDomainEntity{
                 "foodId=" + id +
                 ", foodName='" + foodName + '\'' +
                 ", foodExplain='" + foodExplain + '\'' +
-                ", img=" + Arrays.toString(img) +
                 ", foodPrice=" + foodPrice +
                 ", business=" + business +
                 ", remarks='" + remarks + '\'' +

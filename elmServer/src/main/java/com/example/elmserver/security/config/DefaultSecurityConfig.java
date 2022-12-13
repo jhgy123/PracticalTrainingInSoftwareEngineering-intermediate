@@ -90,8 +90,8 @@ public class DefaultSecurityConfig implements InitializingBean {
     public SecurityFilterChain sysSecurityFilterChain(HttpSecurity http,
                                                       JwtAuthenticationFilter jwtAuthenticationFilter) throws Exception {
 
-//        var getIgnoreToken = new String[]{"/user/**","/doc.html", "/pub/**", "/swagger-ui/**", "/webjars/**", "/v3/**"};
-        var getIgnoreToken = new String[]{"/doc.html", "/pub/**", "/swagger-ui/**", "/webjars/**", "/v3/**"};
+        var getIgnoreToken = new String[]{"/orderdetailet/**","/orders/**","/cart/**","/user/**","/doc.html", "/pub/**", "/swagger-ui/**", "/webjars/**", "/v3/**"};
+//        var getIgnoreToken = new String[]{"/doc.html", "/pub/**", "/swagger-ui/**", "/webjars/**", "/v3/**"};
 
         // @formatter:off
         http.requestMatcher(new AntPathRequestMatcher( "/**"))

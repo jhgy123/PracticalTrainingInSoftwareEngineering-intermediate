@@ -32,8 +32,10 @@ public class User extends AbstractDomainEntity implements UserDetails {
     private String username;
     @Column(columnDefinition="bit default 1")//默认值1（男）
     private Boolean sex;
-//头像，存储的是图片
-    private byte[] img;
+    //头像，存储的是图片
+    @Lob
+    @Column(columnDefinition="TEXT")
+    private String img; //头像，存储的是图片
     @Column(columnDefinition="bit default 1")//默认值1（正常）
     private  Boolean delTag;
     @Schema(description = "账户是否可用")
@@ -68,7 +70,7 @@ public class User extends AbstractDomainEntity implements UserDetails {
                 ", password='" + password + '\'' +
                 ", name='" + username + '\'' +
                 ", sex=" + sex +
-                ", img=" + Arrays.toString(img) +
+                ", img=" + img+
                 ", delTag=" + delTag +
                 '}';
     }

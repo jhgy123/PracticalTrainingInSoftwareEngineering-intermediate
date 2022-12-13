@@ -27,4 +27,11 @@ public class OrdersService extends AbstractTypedService<Orders, Integer>{
         }
         return miDao.findAllByUserAndOrderState(user,state);
     }
+
+    @Operation(summary = "支付订单")
+    public Orders payorder(Orders item) {
+        Orders byId = miDao.getById(item.getId());
+        byId.setOrderState(true);
+        return miDao.save( byId);
+    }
 }

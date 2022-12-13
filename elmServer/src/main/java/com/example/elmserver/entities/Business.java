@@ -39,13 +39,15 @@ public class Business extends AbstractDomainEntity{
     @Column(length = 40)//设置字段的最大长度为40
     private String explain;
 
-    private byte[] img; //头像，存储的是图片
+    @Lob
+    @Column(columnDefinition="TEXT")
+    private String img; //头像，存储的是图片
     private int orderTypeId;
     @Column(precision = 5,scale =2,columnDefinition="decimal(5,2) default 0.0")//设置字段数字宽度为5，小数位数为2，设置字段默认值为0.0
     private double starPrice;
     @Column(precision = 5,scale =2,columnDefinition="decimal(5,2) default 0.0")//设置字段数字宽度为5，小数位数为2,设置字段默认值为0.0
     private double deliveryPrice;
-    @Column(length = 40)//设置字段的最大长度为20,非空
+    @Column(length = 400)//设置字段的最大长度为20,非空
     private String remarks;
 //    @OneToOne(targetEntity = Teacher.class)//设置对应的实体类的类型
 //    @JoinColumn(name = "teacherid", referencedColumnName = "id")//设置外键
@@ -58,7 +60,6 @@ public class Business extends AbstractDomainEntity{
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", explain='" + explain + '\'' +
-                ", img=" + Arrays.toString(img) +
                 ", orderTypeId=" + orderTypeId +
                 ", starPrice=" + starPrice +
                 ", deliveryPrice=" + deliveryPrice +

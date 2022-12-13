@@ -29,4 +29,10 @@ public class OrdersController extends AbstractTypedController<Orders, Integer> {
     public List<Orders> findHistoryOrders(@RequestBody User user,@RequestParam Boolean state) {
         return miService.queryAllByUserAndOrderState(user,state);
     }
+
+    @PutMapping("/pay")
+    @Operation(summary = "修改 支付订单")
+    public Orders update(@RequestBody Orders item) {
+        return miService.payorder(item);
+    }
 }

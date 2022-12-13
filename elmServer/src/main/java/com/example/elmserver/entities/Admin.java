@@ -34,10 +34,11 @@ public class Admin extends AbstractDomainEntity{
     private String name;
     @Column(length = 20,nullable = false)//设置字段的最大长度为20,非空
     private String password;
-    @Column(length = 40)//设置字段的最大长度为20,非空
+    @Column(length = 400)//设置字段的最大长度为200,非空
     private String remarks;
-
-    private byte[] img; //头像，存储的是图片
+    @Lob
+    @Column(columnDefinition="TEXT")
+    private String img; //头像，存储的是图片
 
     @Override
     public String toString() {
