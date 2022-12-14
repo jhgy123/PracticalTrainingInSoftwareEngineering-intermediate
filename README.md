@@ -22,7 +22,7 @@
 6. 运行截图.
    ![002](images/readme/011.jpg)
 
-### 后端
+### 前端
 * 主要技术：angular、TypeScript。
 * 项目结构目录：
   ![002](images/readme/012.jpg)
