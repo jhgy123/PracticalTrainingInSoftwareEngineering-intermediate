@@ -17,7 +17,6 @@ import java.util.List;
 public class OrderdetailetService extends AbstractTypedService<Orderdetailet, Integer>{
     // @Resource
     OrderdetailetDao miDao;
-
     OrderdetailetService(OrderdetailetDao dao) {
         this.dataContext = dao;
         this.miDao = dao;

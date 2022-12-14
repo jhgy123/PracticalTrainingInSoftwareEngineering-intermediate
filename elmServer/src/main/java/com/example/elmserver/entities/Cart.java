@@ -12,14 +12,6 @@ import javax.persistence.*;
 @Table(name = "cart_inf")//重命名表名
 @Data //生成setter/getter、equals、canEqual、hashCode、toString方法，如为final属性，则不会为该属性生成setter方法。
 @Builder
-//类生成相对略微复杂的构建器API
-//如：Student.builder()
-//        .sno( "001" )
-//        .sname( "admin" )
-//        .sage( 18 )
-//        .sphone( "110" )
-//        .build();
-
 @AllArgsConstructor //生成包含所有字段的构造函数
 @NoArgsConstructor //无参构造函数
 public class Cart extends AbstractDomainEntity{
@@ -39,8 +31,4 @@ public class Cart extends AbstractDomainEntity{
 
     @Column(nullable = false)//非空
     private int quantity;
-
-
-
-
 }

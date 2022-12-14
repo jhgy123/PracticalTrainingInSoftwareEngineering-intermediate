@@ -13,14 +13,6 @@ import java.util.Arrays;
 @Table(name = "food_inf")//重命名表名
 @Data //生成setter/getter、equals、canEqual、hashCode、toString方法，如为final属性，则不会为该属性生成setter方法。
 @Builder
-//类生成相对略微复杂的构建器API
-//如：Student.builder()
-//        .sno( "001" )
-//        .sname( "admin" )
-//        .sage( 18 )
-//        .sphone( "110" )
-//        .build();
-
 @AllArgsConstructor //生成包含所有字段的构造函数
 @NoArgsConstructor //无参构造函数
 public class Food extends AbstractDomainEntity{
@@ -41,10 +33,7 @@ public class Food extends AbstractDomainEntity{
     private String img; //头像，存储的是图片
     @Column(precision = 5,scale =2,nullable = false,columnDefinition="decimal(5,2) default 0.0")//重命名字段名字、设置字段数字宽度为5，小数位数为2，非空,默认值0.0
     private double foodPrice;
-
-    //外键：bussiness_id（所属商家编号）
     @ManyToOne(targetEntity = Business.class)//设置对应的实体类的类型(默认Business的主键作为外键）
-//    @JoinColumn(name = "bussinessid")//重新设置外键的名称
     private Business business;
     @Column(length = 400)//设置字段的最大长度为20,非空
     private String remarks;

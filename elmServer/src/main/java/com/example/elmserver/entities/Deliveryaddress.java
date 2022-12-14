@@ -30,6 +30,4 @@ public class Deliveryaddress extends AbstractDomainEntity{
     //外键：user_id（所属商家编号）
     @ManyToOne(targetEntity = User.class)//设置对应的实体类的类型(默认User的主键作为外键）
     private User user;
-
-
 }

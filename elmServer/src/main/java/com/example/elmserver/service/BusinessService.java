@@ -13,16 +13,10 @@ import java.util.List;
 public class BusinessService extends AbstractTypedService<Business, Integer>{
     // @Resource
     BusinessDao miDao;
-
-    //其他DAO
-    // @Resource
-    // UserDao udDao;
-
     BusinessService(BusinessDao dao) {
         this.dataContext = dao;
         this.miDao = dao;
     }
-
     @Operation(summary = "根据点餐分类编号获取商家对象列表")
     public List<Business> queryAllByOrderTypeId(int orderTypeId){
         return miDao.findAllByOrderTypeId(orderTypeId);

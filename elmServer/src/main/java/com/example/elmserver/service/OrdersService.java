@@ -15,7 +15,6 @@ import java.util.List;
 public class OrdersService extends AbstractTypedService<Orders, Integer>{
     // @Resource
     OrdersDao miDao;
-
     OrdersService(OrdersDao dao) {
         this.dataContext = dao;
         this.miDao = dao;
@@ -27,7 +26,6 @@ public class OrdersService extends AbstractTypedService<Orders, Integer>{
         }
         return miDao.findAllByUserAndOrderState(user,state);
     }
-
     @Operation(summary = "支付订单")
     public Orders payorder(Orders item) {
         Orders byId = miDao.getById(item.getId());

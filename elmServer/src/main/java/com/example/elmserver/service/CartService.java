@@ -15,7 +15,6 @@ import java.util.List;
 public class CartService extends AbstractTypedService<Cart, Integer>{
     // @Resource
     CartDao miDao;
-
     CartService(CartDao dao) {
         this.dataContext = dao;
         this.miDao = dao;
@@ -30,6 +29,4 @@ public class CartService extends AbstractTypedService<Cart, Integer>{
     public void deleteAllByCarts(List<Cart> carts){
         miDao.deleteAllInBatch(carts);
     }
-
-
 }

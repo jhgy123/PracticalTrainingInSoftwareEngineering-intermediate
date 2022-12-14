@@ -15,7 +15,6 @@ import java.util.List;
 public class DeliveryaddressService extends AbstractTypedService<Deliveryaddress, Integer>{
     // @Resource
     DeliveryaddressDao miDao;
-
     DeliveryaddressService(DeliveryaddressDao dao) {
         this.dataContext = dao;
         this.miDao = dao;

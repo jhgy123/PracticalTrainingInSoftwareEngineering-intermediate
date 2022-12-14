@@ -18,16 +18,6 @@ public class SysSpringdocConfig {
                 .termsOfService("http://doc.xiaominfo.com")
                 .license(new License().name("Apache 2.0").url("http://doc.xiaominfo.com")));
     }
-
-    // @Bean
-    // public GroupedOpenApi orderApi() {
-    //     return GroupedOpenApi.builder()
-    //             .group("系统管理-订单")
-    //             .packagesToScan("edu.yun.elm.orders")
-    //             //  .addOpenApiCustomiser(jwtHeaderOpenApiCustomiser())
-    //             .build();
-
-    // }
     @Bean
     public GroupedOpenApi elmApi() {
         return GroupedOpenApi.builder()

@@ -17,15 +17,12 @@ import java.util.List;
 
 @Slf4j
 public class AbstractTypedController<T extends AbstractDomainEntity, IdType> {
-
     /**
      * 学生服务
      */
     // @Resource
     protected AbstractTypedService<T, IdType> svcContext;
-
     //#region 关联的数据实体
-
     @Operation(summary = "查询 根据id查单个实体")
     @GetMapping("/{id}")
     public T queryById(@PathVariable IdType id) {
@@ -50,15 +47,10 @@ public class AbstractTypedController<T extends AbstractDomainEntity, IdType> {
      */
     @Operation(summary = "查询 分页")
     @RequestMapping(value = "/page", method = RequestMethod.GET)
-//    @GetMapping(value = "/page")  @PageableDefault(size=20,sort = { "id" }, direction = Sort.Direction.ASC)
     public Page<T> pageQuery(Pageable pageable) {//用spring自带的pageable对象来得到分页信息
-//        System.out.println(pageable);
-//        System.out.println(pageable.getPageSize());
-//        System.out.println(pageable.getPageNumber());
-//        System.out.println(pageable.getSort());
+
         return svcContext.pageQuery(pageable);
     }
-
     /**
      * 根据条件分页查询对象
      *
@@ -66,16 +58,11 @@ public class AbstractTypedController<T extends AbstractDomainEntity, IdType> {
      * @param pageable  分页
      * @return
      */
-//    @Operation(summary = "查询 分页")
-//    @RequestMapping(value = "/page", method = RequestMethod.GET)
     public Page<T> pageQueryBy(@ModelAttribute AbstractQueryCondition condition, Pageable pageable) {
         return svcContext.pageQuery(pageable, condition);
     }
-
     //#endregion
-
     //#region 关联的数据实体基本操作
-
     @PostMapping
     @Operation(summary = "创建 数据实体")
     public T create(@RequestBody T item) {

@@ -1,5 +1,4 @@
 package com.example.elmserver.entities;
-
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
@@ -10,13 +9,11 @@ import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.io.Serializable;
 import java.util.Date;
-
 @Data
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public   class AbstractDomainEntity
         implements Cloneable, Serializable {
-
     /**
      * 创建日期
      */

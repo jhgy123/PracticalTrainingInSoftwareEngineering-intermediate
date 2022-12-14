@@ -13,22 +13,12 @@ import java.util.List;
 @Slf4j
 @Service
 public class AdminService extends AbstractTypedService<Admin, Integer> {
-
     // @Resource
     AdminDao miDao;
-
-    //其他DAO
-    // @Resource
-    // UserDao udDao;
-
     AdminService(AdminDao dao) {
         this.dataContext = dao;
         this.miDao = dao;
     }
-
-    /**
-     * @return
-     */
     public List<Admin> queryAll() {
 
         List<Admin> lst = null;
@@ -43,9 +33,7 @@ public class AdminService extends AbstractTypedService<Admin, Integer> {
         }
         return lst;
     }
-
     public Page<Admin> queryMenusByPage(Pageable pageable) {
         return miDao.queryPage(pageable, null);
-
     }
 }

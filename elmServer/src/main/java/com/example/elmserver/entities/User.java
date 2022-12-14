@@ -42,7 +42,6 @@ public class User extends AbstractDomainEntity implements UserDetails {
     @Column()
     private boolean enabled = true;
 
-
     @Schema(description = "凭据是否未过期")
     @Column()
     private boolean credentialsNonExpired = true;
@@ -62,20 +61,6 @@ public class User extends AbstractDomainEntity implements UserDetails {
     @Schema(description = "账号过期时间（账号有效时间）")
     @Column()
     private Date accountExpiredDate;
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", password='" + password + '\'' +
-                ", name='" + username + '\'' +
-                ", sex=" + sex +
-                ", img=" + img+
-                ", delTag=" + delTag +
-                '}';
-    }
-
-
     //
     @JsonIgnore
     @Transient
